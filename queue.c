@@ -96,15 +96,15 @@ int main()
             printf("Enter the number to enqueue:\n");
             scanf("%d", &value);             // Read the value to enqueue
             enqueue(value);                  // Call enqueue function
-            printf("%d\t%d\n", front, rear); // Print the current front and rear indices
+            // printf("%d\t%d\n", front, rear); // Print the current front and rear indices
             break;
         case 2:
             printf("Dequeued: %d\n", dequeue()); // Call dequeue function and print dequeued value
-            printf("%d\t%d\n", front, rear);     // Print the current front and rear indices
+            // printf("%d\t%d\n", front, rear);     // Print the current front and rear indices
             break;
         case 3:
             display();                       // Call display function to print the queue
-            printf("%d\t%d\n", front, rear); // Print the current front and rear indices
+            // printf("%d\t%d\n", front, rear); // Print the current front and rear indices
             break;
         case 4:
             break; // Exit the program
