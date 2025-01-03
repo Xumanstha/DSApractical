@@ -104,7 +104,7 @@ int main()
     do
     {
         // Display menu options
-        printf("1.Enqueue\n2.Dequeue\n3.Display\n4.Peek\n5.Exit");
+        printf("1.Enqueue\n2.Dequeue\n3.Display\n4.Peek\n5.Exit\n");
         scanf("%d", &choose); // Read the user's choice
         switch (choose)
         {
