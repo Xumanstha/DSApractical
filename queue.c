@@ -80,6 +80,22 @@ void display()
         printf("\n");
     }
 }
+// Function to peek at the front element of the queue without removing it
+int peek()
+{
+    // Check if the queue is empty
+    if (isEmpty())
+    {
+        printf("The queue is empty"); // Inform the user that the queue is empty
+        return -1;                    // Return an invalid value (-1) to indicate an error
+    }
+    else
+    {
+        // Retrieve the value at the front of the queue
+        int value = queue[front];
+        return value; // Return the front element without removing it
+    }
+}
 
 int main()
 {
@@ -88,14 +104,14 @@ int main()
     do
     {
         // Display menu options
-        printf("1.Enqueue\n2.Dequeue\n3.Display\n4.Exit\n");
+        printf("1.Enqueue\n2.Dequeue\n3.Display\n4.Peek\n5.Exit");
         scanf("%d", &choose); // Read the user's choice
         switch (choose)
         {
         case 1:
             printf("Enter the number to enqueue:\n");
-            scanf("%d", &value);             // Read the value to enqueue
-            enqueue(value);                  // Call enqueue function
+            scanf("%d", &value); // Read the value to enqueue
+            enqueue(value);      // Call enqueue function
             // printf("%d\t%d\n", front, rear); // Print the current front and rear indices
             break;
         case 2:
@@ -103,14 +119,17 @@ int main()
             // printf("%d\t%d\n", front, rear);     // Print the current front and rear indices
             break;
         case 3:
-            display();                       // Call display function to print the queue
+            display(); // Call display function to print the queue
             // printf("%d\t%d\n", front, rear); // Print the current front and rear indices
             break;
         case 4:
+            printf("The front element is:%d\n", peek());
+            break;
+        case 5:
             break; // Exit the program
         default:
             printf("Invalid choice:\n"); // Handle invalid menu choices
         }
-    } while (choose != 4); // Repeat until the user chooses to exit
+    } while (choose != 5); // Repeat until the user chooses to exit
     return 0; // End of the program
 }
