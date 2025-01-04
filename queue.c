@@ -110,9 +110,8 @@ int main()
         {
         case 1:
             printf("Enter the number to enqueue:\n");
-            scanf("%d", &value); // Read the value to enqueue
+            scanf("%d", &value); // Read the value to enqueue   
             enqueue(value);      // Call enqueue function
-            // printf("%d\t%d\n", front, rear); // Print the current front and rear indices
             break;
         case 2:
             printf("Dequeued: %d\n", dequeue()); // Call dequeue function and print dequeued value
@@ -120,7 +119,6 @@ int main()
             break;
         case 3:
             display(); // Call display function to print the queue
-            // printf("%d\t%d\n", front, rear); // Print the current front and rear indices
             break;
         case 4:
             printf("The front element is:%d\n", peek());
