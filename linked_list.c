@@ -119,7 +119,8 @@ int main()
     InsertAtBeginning(3); // Insert 3 at the beginning
     InsertAtLast(10);     // Insert 10 at the end
     InsertAtX(39, 2);     // Insert 39 at position 2
+     traverse(head);       // Traverse and print the list
     DeleteAtBeginning();  // Delete the first node
-    traverse(head);       // Traverse and print the list
+    traverse(head);       // Traverse and print the list after deleting
     return 0;
 }
