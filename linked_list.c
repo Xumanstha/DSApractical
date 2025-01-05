@@ -20,11 +20,13 @@ void InsertAtBeginning(int value)
     {
         node->next = NULL; // If empty, the new node points to NULL
         head = node;       // Make the new node the head
+        printf("Number inserted:%d", value);
     }
     else
     {
         node->next = head; // Point the new node to the current head
         head = node;       // Update the head to the new node
+        printf("Number inserted:%d", value);
     }
 }
 
@@ -37,6 +39,7 @@ void InsertAtLast(int value)
     if (head == NULL)                  // Check if the list is empty
     {
         head = node; // If empty, the new node becomes the head
+        printf("Number inserted:%d", value);
     }
     else
     {
@@ -46,6 +49,7 @@ void InsertAtLast(int value)
             temp = temp->next;
         }
         temp->next = node; // Set the last node's next to the new node
+        printf("Number inserted:%d", value);
     }
 }
 
@@ -59,6 +63,7 @@ void InsertAtX(int value, int loc)
     {
         node->next = head; // Point the new node to the current head
         head = node;       // Update the head to the new node
+        printf("Number inserted:%d", value);
         return;
     }
     Node *temp = head;        // Temporary pointer to traverse the list
@@ -81,6 +86,7 @@ void InsertAtX(int value, int loc)
     }
     node->next = temp->next; // Point the new node to the next node
     temp->next = node;       // Update the (loc - 1)th node to point to the new node
+    printf("Number inserted:%d", value);
 }
 
 // Function to traverse and print the list
@@ -114,13 +120,50 @@ void DeleteAtBeginning()
 // Main function to demonstrate the singly linked list operations
 int main()
 {
-    InsertAtBeginning(1); // Insert 1 at the beginning
-    InsertAtBeginning(2); // Insert 2 at the beginning
-    InsertAtBeginning(3); // Insert 3 at the beginning
-    InsertAtLast(10);     // Insert 10 at the end
-    InsertAtX(39, 2);     // Insert 39 at position 2
-     traverse(head);       // Traverse and print the list
-    DeleteAtBeginning();  // Delete the first node
-    traverse(head);       // Traverse and print the list after deleting
+    // InsertAtBeginning(1); // Insert 1 at the beginning
+    // InsertAtBeginning(2); // Insert 2 at the beginning
+    // InsertAtBeginning(3); // Insert 3 at the beginning
+    // InsertAtLast(10);     // Insert 10 at the end
+    // InsertAtX(39, 2);     // Insert 39 at position 2
+    // traverse(head);       // Traverse and print the list
+    // DeleteAtBeginning();  // Delete the first node
+    // traverse(head);       // Traverse and print the list after deleting
+    int choice, value, position;
+    do
+    {
+        printf("1.Insert At Beginning\n2.Insert At Last\n3.Insert At specific position\n4.Delete At beginning\n5.Display List\n6.Exit");
+        printf("ENter your choice:");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("Enter the number to add to List:");
+            scanf("%d", &value);
+            InsertAtBeginning(value);
+            break;
+        case2:
+            printf("Enter the number to add to List:");
+            scanf("%d", &value);
+            InsertAtLast(value);
+            break;
+        case 3:
+            printf("Enter the number to add to List with specific position:");
+            scanf("%d%d", &value, &position);
+            InsertAtX(value, position);
+            break;
+        case 4:
+            DeleteAtBeginning();
+            break;
+        case 5:
+            traverse(head);
+            break;
+        case 6:
+            break;
+        default:
+            printf("Invalid choice\n");
+            break;
+        }
+    } while (choice != 6);
+
     return 0;
 }
