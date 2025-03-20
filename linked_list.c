@@ -120,14 +120,6 @@ void DeleteAtBeginning()
 // Main function to demonstrate the singly linked list operations
 int main()
 {
-    // InsertAtBeginning(1); // Insert 1 at the beginning
-    // InsertAtBeginning(2); // Insert 2 at the beginning
-    // InsertAtBeginning(3); // Insert 3 at the beginning
-    // InsertAtLast(10);     // Insert 10 at the end
-    // InsertAtX(39, 2);     // Insert 39 at position 2
-    // traverse(head);       // Traverse and print the list
-    // DeleteAtBeginning();  // Delete the first node
-    // traverse(head);       // Traverse and print the list after deleting
     int choice, value, position;
     do
     {
